@@ -3,17 +3,19 @@
 	--tablet: 820px;
 	--desktop: 1920px;
 
+	--color-text: #2b2b2b;
+
 	--color-black: #000;
-	--color-blue: #528bf5;
+	--color-blue: #2672ff;
 	--color-line: #9a9b9c;
 }
 
 
 body {
-	font-size: 16px;
+	font-size: 1rem;
 	margin: 0 auto;
   padding: 0;
-	color: #2b2b2b;
+	color: var(--color-text);
 }
 
 .page__body {
@@ -29,8 +31,9 @@ body {
 
 .header__title {
 	padding-bottom: 10px;
-	border-bottom: 1px solid var(--color-line);
-
+	border-bottom: 2px solid var(--color-line);
+	font-size: 2.5rem;
+	font-weight: 900;
 }
 
 .index__page {
@@ -43,14 +46,28 @@ body {
 	padding-bottom: 50px;
 }
 
+.bayan__list:hover .bayan__item{
+	color: var(--color-black);
+}
+
+.bayan__list:hover .bayan__status{
+	background-image: url('cross.svg');
+	background-size: contain;
+}
+
 .bayan {
+	margin-bottom: 25px;
 	padding-bottom: 25px;
+	color: var(--color-blue);
+	cursor: pointer;
 	border-bottom: 1px solid var(--color-line);
+	transition: all 0.3s ease;
 }
 
 .bayan__item {
-
 	display: grid;
+	column-gap: 20px;
+	row-gap: 25px;
 	grid-template-columns: 90% auto;
 	grid-template-rows: auto auto;
 }
@@ -66,6 +83,8 @@ body {
 	height: 25px;
 	justify-self: center;
 }
+
+
 
 .bayan__image {
 	grid-column: 1 / -1;
