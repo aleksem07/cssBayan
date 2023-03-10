@@ -46,47 +46,75 @@ body {
 	padding-bottom: 50px;
 }
 
-.bayan__list:hover .bayan__item{
+.bayan__list:hover .bayan__title{
 	color: var(--color-black);
 }
 
 .bayan__list:hover .bayan__status{
 	background-image: url('cross.svg');
+	background-repeat: no-repeat;
 	background-size: contain;
 }
 
 .bayan {
+	list-style: none;
 	margin-bottom: 25px;
 	padding-bottom: 25px;
-	color: var(--color-blue);
-	cursor: pointer;
 	border-bottom: 1px solid var(--color-line);
-	transition: all 0.3s ease;
 }
 
-.bayan__item {
+.bayan:last-child {
+	border: none;
+}
+
+.bayan__item label{
 	display: grid;
 	column-gap: 20px;
 	row-gap: 25px;
-	grid-template-columns: 90% auto;
+	grid-template-columns: 5% 90% auto;
 	grid-template-rows: auto auto;
+	cursor: pointer;
 }
 
 .bayan__title {
 	margin: 0;
 	padding: 0;
-	grid-column: 1 / 2;
+	grid-column: 2 / 3;
+	color: var(--color-blue);
+		transition: all 0.3s ease;
 }
 
 .bayan__status {
 	width: 25px;
 	height: 25px;
+		grid-column: 3 / 4;
 	justify-self: center;
 }
 
-
+.bayan:hover .bayan__image {
+	display: block;
+}
 
 .bayan__image {
+	display: none;
 	grid-column: 1 / -1;
 	justify-self: center;
+	transition: all 1s ease;
+
+}
+
+.bayan__radio {
+	grid-column: 1 / 2;
+	position: absolute;
+  opacity: 0;
+}
+
+input:checked ~ .bayan__status{
+	width: 20px;
+	height: 20px;
+	transform: rotate(45deg);
+}
+
+input:checked ~ .bayan__image{
+	display: block;
 }
