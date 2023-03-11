@@ -108,10 +108,11 @@ body {
     -ms-grid-column: 5;
 }
 
-@media (min-width: 820px) {
-    .bayan__item label {
-        cursor: pointer;
-    }
+@media (hover: hover) and (pointer: fine) {
+
+		.bayan__item label {
+				cursor: pointer;
+		}
 }
 
 .bayan__title {
@@ -173,15 +174,16 @@ body {
 }
 
 .bayan__list:hover .bayan__title {
-    color: var(--color-black);
+		color: var(--color-black);
 }
 
 .bayan__list:hover .bayan__status {
-    background: url(assets/icon/cross.svg);
-    background-size: contain;
-    width: 1.31rem;
-    height: 1.31rem;
+		background: url(assets/icon/cross.svg);
+		background-size: contain;
+		width: 1.31rem;
+		height: 1.31rem;
 }
+
 
 input:checked ~ .bayan__status {
     -webkit-transform: rotate(45deg);
@@ -198,7 +200,7 @@ input:checked ~ .bayan__image {
 }
 
 @media (max-width: calc(820px - 1px)) {
-    .bayan:hover .bayan__image,
+	.bayan:hover .bayan__image,
 	input:checked ~ .bayan__image {
         height: calc(var(--pic-height) - 8rem);
     }
