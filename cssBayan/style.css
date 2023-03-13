@@ -1,0 +1,238 @@
+:root {
+    --mobile: 320px;
+    --tablet: 820px;
+    --desktop: 1920px;
+    --pic-width: 25rem;
+    --pic-height: 20rem;
+    --color-text: #2b2b2b;
+    --color-line: #cecfcf;
+    --color-bg-image: #666666;
+    --color-black: #000;
+    --color-blue: #2672ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto;
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.page__body {
+    max-width: var(--desktop);
+    min-width: var(--mobile);
+}
+
+.header {
+    margin-bottom: 3.125rem;
+    padding-top: 0.625rem;
+    padding-inline: 10%;
+}
+
+.header__title {
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid var(--color-line);
+    font-weight: 900;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.index__page {
+    padding-inline: 10%;
+}
+
+.bayan__list {
+    margin: 0;
+    padding: 0;
+    padding-bottom:  3.125rem;
+}
+
+.bayan__status {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.bayan {
+    list-style: none;
+    padding-block: 1.56rem;
+    border-bottom: 1px solid var(--color-line);
+}
+
+.bayan__item label {
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    row-gap: 2rem;
+    -ms-grid-columns: auto 1.25rem 90% 1.25rem auto;
+    grid-template-columns: auto 90% auto;
+    -ms-grid-rows: auto 2rem auto;
+    grid-template-rows: auto auto;
+}
+
+.bayan__item label > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.bayan__item label > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.bayan__item label > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.bayan__item label > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+.bayan__item label > *:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+}
+
+.bayan__item label > *:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+		.bayan__item label {
+				cursor: pointer;
+		}
+}
+
+.bayan__title {
+    margin: 0;
+    padding: 0;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    color: var(--color-blue);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 320px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 2rem;
+    }
+}
+
+.bayan__status {
+    width: 2rem;
+    height: 2rem;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.bayan__image {
+    height: 0;
+    grid-column: 1 / -1;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    background-color: var(--color-bg-image);
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.bayan__radio {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    opacity: 0;
+}
+
+.bayan__list:hover .bayan__title {
+		color: var(--color-black);
+}
+
+.bayan__list:hover .bayan__status {
+		background: url(assets/icon/cross.svg);
+		background-size: contain;
+		width: 1.31rem;
+		height: 1.31rem;
+}
+
+
+input:hover ~ .bayan__status {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input:checked ~ .bayan__status {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input:checked ~ .bayan__image {
+    height: var(--pic-height);
+}
+
+.bayan:hover .bayan__image {
+    height: var(--pic-height);
+}
+
+@media (max-width: calc(820px - 1px)) {
+	.bayan:hover .bayan__image,
+	input:checked ~ .bayan__image {
+        height: calc(var(--pic-height) - 8rem);
+    }
+
+    .bayan__item label {
+        -ms-grid-columns: auto 75% auto;
+        grid-template-columns: auto 75% auto;
+    }
+}
+
+@media (min-width: 1920px) {
+    .bayan:hover .bayan__image,
+input:checked ~ .bayan__image {
+        height: calc(var(--pic-height) + 8rem);
+    }
+}
+
+@media (width: 320px) {
+    .bayan:hover .bayan__image,
+	input:checked ~ .bayan__image {
+        margin-left: -10%;
+        height: calc(var(--pic-height) - 8rem);
+    }
+}
+
+.footer {
+    padding-inline: 10%;
+    text-align: center;
+}
