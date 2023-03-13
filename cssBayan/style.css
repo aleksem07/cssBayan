@@ -185,6 +185,12 @@ body {
 }
 
 
+input:hover ~ .bayan__status {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 input:checked ~ .bayan__status {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
